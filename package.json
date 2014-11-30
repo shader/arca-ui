@@ -1,0 +1,17 @@
+{
+  "name": "component-registry",
+  "description": "A web interface for the ACL Component Registry",
+  "author": "Samuel Christie <schrist@ncsu.edu>",
+  "dependencies": {
+    "connect": "3.2.x",
+    "serve-static": "1.6.x"
+  },
+  "devDependencies": {
+    "json-server": "0.4.x"
+  },
+  "engine": "node >= 0.10.32",
+  "repository": {
+    "type": "git",
+    "url": "git://github.ncsu.edu/schrist/component-registry.git"
+  }
+}

@@ -1,0 +1,80 @@
+<div class='input-group'>
+  <input placeholder='Search' clearable ng-model='search'/>
+</div>
+<div class="table-responsive">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th ng-repeat='field in model.item.fields'>{{field | capitalize}}</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat='m in data[model.item.name.toLowerCase()+"s"] | filter:search'
+          ng-controller='RowCtrl'>
+        <td ng-repeat='field in model.item.fields'>
+          <span editable-text="m[field]" e-name="field" e-form="rowform">
+            <span ng-if="!isArray(m[field])">
+              {{ m[field] }}
+            </span>
+            <ul ng-if="isArray(m[field])">
+              <li ng-repeat="item in m[field]">{{item}}</li>
+            </ul>
+          </span>
+        </td>
+        <td>
+          <form editable-form name="rowform"
+                ng-show="rowform.$visible"
+                class="form-buttons form-inline"
+                onaftersave="m.put()">
+            <button item="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+              Save
+            </button>
+            <button item="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+              Cancel
+            </button>
+          </form>
+          <div class="buttons" ng-show="!rowform.$visible">
+            <button class="btn btn-primary" ng-click="rowform.$show()">Edit</button>
+            <button class="btn btn-danger" ng-click="remove()">Delete</button>
+          </div>
+          <button class="btn btn-default" ng-click="download(m)">Download Spec</button>
+        </td>
+      </tr>
+      <tr ng-controller="InsertRowCtrl">
+        <td ng-repeat='field in model.item.fields'>
+          <span editable-text="m[field]" e-name="field" e-form="rowform">
+            <span ng-if="!isArray(m[field])">
+              {{ m[field] }}
+            </span>
+            <ul ng-if="isArray(m[field])">
+              <li ng-repeat="item in m[field]">{{item}}</li>
+            </ul>
+          </span>
+        </td>
+        <td>
+          <form editable-form name="rowform"
+                ng-show="rowform.$visible"
+                class="form-buttons form-inline"
+                onaftersave="create()">
+            <button item="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+              Save
+            </button>
+            <button item="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+              Cancel
+            </button>
+          </form>
+          <div class="buttons" ng-show="!rowform.$visible">
+            <button class="btn btn-primary" ng-click="rowform.$show()">+</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button class="btn btn-default" ng-click='upload()'>
+  Upload {{model.item.name | capitalize}} RDF
+</button>
+<button class="btn btn-default" ng-click='wizard()'>
+  Add {{model.item.name | capitalize}} via wizard
+</button>

@@ -1,0 +1,7 @@
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav side-nav">
+    <li ng-repeat='i in model.items' ng-class="{active: model.item == i}">
+      <a ui-sref='main.{{i.name | lowercase}}'>{{i.name}}</a>
+    </li>
+  </ul>
+</div>
