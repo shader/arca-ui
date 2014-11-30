@@ -30,7 +30,8 @@
     "angular-deferred-bootstrap": "~0.1.1",
     "bluebird": "~2.2.2",
     "angular-local-storage": "*",
-    "angular-xeditable": "*"
+    "angular-xeditable": "*",
+    "d3": "~3.4.13"
   },
   "resolutions": {
     "jquery": "2.1.1",

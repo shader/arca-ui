@@ -13,11 +13,11 @@ define(['angular',
        ], function (ng) {
   /* App Module */
 
-  return ng.module('seedApp', [
+  return ng.module('arcaApp', [
     'ui.router',
     'ui.bootstrap',
-    'registryControllers',
-    'registryServices',
+    'arcaControllers',
+    'arcaServices',
     'restangular',
     'breadcrumb',
     'LocalStorageModule',

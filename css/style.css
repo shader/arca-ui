@@ -1,0 +1,124 @@
+html, body, #wrapper, #page-wrapper
+{
+    height: 100%;
+}
+
+.composite-input {
+    position: relative;
+}
+
+.clearable {
+    padding-right: 24px;
+}
+
+.composite-input .clear {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    z-index: 2;
+}
+
+.input-group .composite-input:not(:first-child) .form-control {
+    border-radius: 0px 4px 4px 0px;
+}
+
+.flex {
+    display: -webkit-flex; /*safari*/
+    display: flex;
+    -webkit-flex-flow: row wrap; /*safari*/
+    flex-flow: row wrap;
+    -webkit-justify-content: center; /*safari*/
+    justify-content: center;
+}
+
+.flex > div {
+    -webkit-flex: 0 1 auto; /*safari*/
+    flex: 0 1 auto;
+    margin: 0 15px 15px 0;
+}
+
+.flex > .center {
+    -webkit-flex: 1 1 250px; /*safari*/
+    flex: 1 1 250px;
+}
+
+#bar {
+    width: 100%;
+    height: 64px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 16px;
+    background: #f4f4f4;
+}
+
+#bar a {
+    padding-right: 16px;
+}
+
+#bar .center {
+    text-align: center;
+}
+
+#bar h1 {
+    vertical-align: middle;
+    font-size: 32px;
+    line-height: 0px;
+}
+
+#container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 24px 40px;
+    position: absolute;
+    top: 64px;
+    left: 0;
+}
+
+
+#vis {
+  padding-top: 15px;
+}
+
+svg {
+  display: block;
+  margin: auto;
+}
+
+.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.x.axis line {
+  stroke: #ddd;
+  stroke-opacity: 0.6;
+}
+
+.x.axis path {
+  display: none;
+}
+
+footer p {
+  text-align: center;
+}
+
+#legend {
+  position: fixed;
+  top: 100px;
+  right: 0px;
+  width: 200px;
+  height: 280px;
+  z-index: 100000;
+  overflow: visible;
+}

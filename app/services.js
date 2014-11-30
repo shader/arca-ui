@@ -1,3 +1,3 @@
 define(['angular', 'lodash', 'ng-resource', 'restangular'], function (ng, _) {
-    return ng.module('seedServices', ['ngResource', 'restangular'])
+    return ng.module('arcaServices', ['ngResource', 'restangular'])
 });

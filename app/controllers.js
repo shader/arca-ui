@@ -12,17 +12,19 @@ define(['angular',
 
   _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
-  var Controllers = ng.module('seedControllers',
+  var Controllers = ng.module('arcaControllers',
                               ['ui.bootstrap',
                                'ui.format',
                                'ngGrid',
                                'restangular',
-                               'registryServices'
+                               'arcaServices'
                               ]);
   Controllers
   .controller('RootCtrl', ['$scope', 'Restangular', function($scope, Data) {
     $scope.user = {name: "Creator"};
     $scope.model = {};
+    $scope.model.title = "Welcome";
+
     Data.all('items').getList().then(function(items){
       $scope.model.items = items;
       $scope.model.item = items[0];
