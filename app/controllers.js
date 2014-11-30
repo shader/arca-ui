@@ -30,7 +30,7 @@ define(['angular',
       var isDownwards = true;
       if (toState) {
         var newState = toState.url;
-        if (oldState !== newState && oldState.indexOf(newState) !== -1) {
+        if (oldState !== newState && newState.indexOf(oldState) !== -1) {
           isDownwards = false;
         }
         oldState = newState;
