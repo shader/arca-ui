@@ -27,14 +27,12 @@ define(['angular',
 
     var oldState = '';
     $scope.$on('$stateChangeStart', function(angularEvent, toState) {
-      //console.log("stateChangeStart");
       var isDownwards = true;
       if (toState) {
-        var newState = toState.name;
-        if (oldState !== newState && !$state.includes(newState)) {
+        var newState = toState.url;
+        if (oldState !== newState && oldState.indexOf(newState) !== -1) {
           isDownwards = false;
         }
-        
         oldState = newState;
       }
       

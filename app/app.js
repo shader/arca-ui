@@ -51,7 +51,7 @@ define(['angular',
             resolve: delay
           })
           .state('test2', {
-            url: "/test2",
+            url: "/test1/test2",
             templateUrl: 'partials/test2.html',
             resolve: delay
           })

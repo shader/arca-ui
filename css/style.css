@@ -67,16 +67,6 @@ html, body, #wrapper, #page-wrapper
     line-height: 0px;
 }
 
-#container {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 24px 40px;
-    position: absolute;
-    top: 64px;
-    left: 0;
-}
-
-
 #vis {
   padding-top: 15px;
 }
@@ -123,20 +113,23 @@ footer p {
   overflow: visible;
 }
 
+#container {
+    box-sizing: border-box;
+    width: 800px;
+    height: 400px;
+    padding: 24px 40px;
+    position: absolute;
+    top: 64px;
+    overflow: hidden;
+}
+
 .slide {
-  position: relative;
+  position: absolute;
 }
 
 .slide.ng-leave, .slide.ng-enter {
   -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -ms-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -o-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
   transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  
-  /* position:absolute; */
-  /* top: 0; */
-  /* bottom: 0; */
 }
 
 .slide.up.ng-enter,
