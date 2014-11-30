@@ -20,10 +20,26 @@ define(['angular',
                                'arcaServices'
                               ]);
   Controllers
-  .controller('RootCtrl', ['$scope', 'Restangular', function($scope, Data) {
+  .controller('RootCtrl', ['$scope', '$state', 'Restangular', function($scope, $state, Data) {
     $scope.user = {name: "Creator"};
     $scope.model = {};
     $scope.model.title = "Welcome";
+
+    var oldState = '';
+    $scope.$on('$stateChangeStart', function(angularEvent, toState) {
+      //console.log("stateChangeStart");
+      var isDownwards = true;
+      if (toState) {
+        var newState = toState.name;
+        if (oldState !== newState && !$state.includes(newState)) {
+          isDownwards = false;
+        }
+        
+        oldState = newState;
+      }
+      
+      $scope.isDownwards = isDownwards;
+    });
 
     Data.all('items').getList().then(function(items){
       $scope.model.items = items;

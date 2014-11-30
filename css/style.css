@@ -122,3 +122,39 @@ footer p {
   z-index: 100000;
   overflow: visible;
 }
+
+.slide {
+  position: relative;
+}
+
+.slide.ng-leave, .slide.ng-enter {
+  -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -ms-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -o-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  
+  /* position:absolute; */
+  /* top: 0; */
+  /* bottom: 0; */
+}
+
+.slide.up.ng-enter,
+.slide.down.ng-leave.ng-leave-active {
+  top: 100%;
+  opacity: 0;
+}
+
+.slide.up.ng-enter.ng-enter-active,
+.slide.up.ng-leave,
+.slide.down.ng-enter.ng-enter-active,
+.slide.down.ng-leave {
+  top:0;
+  opacity: 1;
+}
+
+.slide.up.ng-leave.ng-leave-active,
+.slide.down.ng-enter {
+  top: -100%;
+  opacity: 0;
+}

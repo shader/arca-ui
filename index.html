@@ -15,21 +15,21 @@
   </head>
   <body ng-controller='RootCtrl'>
     <div id="bar" class="flex">
-      <div>
-        <a><img src="res/back.png"/></a>
+      <div onclick="history.back()">
+        <a><img src="images/back.png"/></a>
       </div>
       <div>
-        <a><img src="res/home.png"/></a>
+        <a ui-sref="main"><img src="images/home.png"/></a>
       </div>
       <div class="center">
         <h1>{{model.title}}</h1>
       </div>
       <div>
-        <a><img src="res/menu.png"/></a>
+        <a><img src="images/menu.png"/></a>
       </div>
     </div>
     <div id="container">
-    <div ng-include="site.page.url"></div>
+      <div ui-view ng-class="{slide: true, up: !isDownwards, down: isDownwards}"></div>
     </div>
   </body>
 </html>

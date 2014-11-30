@@ -9,6 +9,7 @@ requirejs.config({
         'jquery-ui': '../lib/bower/jquery-ui/ui/minified/jquery-ui.min',
         text: '../lib/bower/requirejs-text/text',
         'angular': '../lib/bower/angular/angular',
+        'ng-animate': '../lib/bower/angular-animate/angular-animate.min',
         'ng-route': '../lib/bower/angular-route/angular-route.min',
         'ng-bootstrap': '../lib/bower/angular-bootstrap/ui-bootstrap-tpls.min',
         'ng-resource': '../lib/bower/angular-resource/angular-resource',
@@ -31,6 +32,7 @@ requirejs.config({
     },
     shim: {
 	    'angular' : {'exports' : 'angular'},
+        'ng-animate': ['angular'],
         'ng-route': ['angular'],
         'ng-bootstrap': ['angular'],
         'ng-resource': ['angular'],
